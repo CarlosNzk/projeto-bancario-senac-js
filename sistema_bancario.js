@@ -32,7 +32,7 @@ Deposito no valor de R$ ${valor} realizado.\n`
     }
     else if (menu == 's') {
         let valor = parseFloat(prompt('Informe o valor do saque: '));
-        if (quantidadeSaque < saqueLimite && valor <= 500 && valor <= saldo) {
+        if (quantidadeSaque < saqueLimite && valor >= 1 && valor <= 500 && valor <= saldo) {
             saldo = saldo - valor
             extrato = extrato + `
 Saque no valor de R$ ${valor} realizado.\n`
@@ -48,6 +48,9 @@ Saque no valor de R$ ${valor} realizado.\n`
         else if (valor > 500) {
             alert('Máximo de R$ 500,00 por transação')
         }
+        else if (valor <= 0 ) {
+            alert('Por favor, digite um valor válido!')
+        }
     }
     else if (menu == 'e') {
         alert(`
@@ -56,18 +59,12 @@ ${extrato}
         
 Seu saldo é de: R$ ${saldo}
 ==============================`)
-        
     }
-
+    else if (menu == 'q') {
+        document.write('Obrigado! Volte sempre!')
+        break
+    }
+    else {alert`Por favor, digite um dado válido!`}
 }
-
-
-
-
-
-
-
-
-
 
 
